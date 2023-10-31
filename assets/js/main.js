@@ -94,3 +94,32 @@ sr.reveal(`.specs__data, .discount__animate`,{origin: 'left', interval: 100})
 sr.reveal(`.specs__img, .discount__img`,{origin: 'right'})
 sr.reveal(`.case__img`,{origin: 'top'})
 sr.reveal(`.case__data`)
+
+// Assuming you have a reference to the HTML element where you want to update the progress bar. Below function for updating progress bar. 
+function updateProgressBar(cardSelector, newProgressValue) {
+    const progressBar = document.querySelector(`${cardSelector} .profile-percent`);
+    progressBar.style.setProperty('--progress-width', newProgressValue);
+  }
+  
+  // Example usage:
+  updateProgressBar('.card1', '90%'); // Update the progress bar for card with class 'card1'
+  updateProgressBar('.card2', '75%'); // Update the progress bar for card with class 'card2'
+  
+// Below function for updating gender icon. 
+// JavaScript function to change the gender icon based on gender value
+// JavaScript function to change the gender icon based on gender value
+function setGenderIcon(gender) {
+    const genderIcon = document.getElementById('genderIcon');
+    
+    if (gender === 'male') {
+        genderIcon.innerHTML = '<i class="fas fa-mars" style="color: gold;"></i>';
+    } else if (gender === 'female') {
+        genderIcon.innerHTML = '<i class="fas fa-venus" style="color: gold;"></i>';
+    } else {
+        // Handle other gender values or unknown values
+        genderIcon.innerHTML = '';
+    }
+}
+
+// Example usage:
+setGenderIcon('male'); // Call this function with 'male' or 'female' to set the gender icon.
