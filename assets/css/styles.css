@@ -16,6 +16,7 @@
   --text-gradient: linear-gradient(hsl(var(--hue-color), 5%, 20%), hsl(var(--hue-color), 30%, 70%));
   --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
   --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
+  --progress-width:90%;
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --biggest-font-size: 5rem;
@@ -410,53 +411,132 @@ img {
 }
 
 /*=============== PRODUCTS ===============*/
-.products__line {
-  line-height: 4rem;
-}
-
-.products__container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem 1.5rem;
-  padding-top: 3rem;
-}
-
-.products__card {
-  position: relative;
-  height: 132px;
-  background-color: var(--container-color);
-  padding: .75rem;
-  border-radius: .5rem;
+.products__container.grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center; /* Center the grid horizontally */
+}
+.profile-initials {
+  width: 94.64px;
+  height: 94.64px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  background: #31344b;
+  color: #ecf0f3;
+  text-transform: uppercase;
 }
 
-.products__img {
-  width: 80px;
-  position: absolute;
-  inset: 0;
-  margin-right: auto;
-  margin-left: auto;
-  top: -3rem;
+
+
+
+.profile-icons .icon i.fas.fa-thumbs-up:hover {
+  color: #FFC107; /* Change the color to your desired hover color */
 }
 
-.products__content {
-  align-self: flex-end;
+.profile-icons .icon i.fas.fa-comment:hover {
+  color: #007BFF; /* Change the color to your desired hover color */
 }
 
-.products__title, .products__price {
-  font-size: var(--small-font-size);
+.profile-icons .icon i.fas.fa-bookmark:hover {
+  color: #17A2B8; /* Change the color to your desired hover color */
 }
 
-.products__price {
-  font-weight: var(--font-semi-bold);
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #202427;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%; /* Ensure each profile card takes up the full width of its container */
 }
 
-.products__button {
-  position: absolute;
-  right: .5rem;
-  bottom: .5rem;
-  padding: .5rem;
-  border-radius: .35rem;
+/* Add a container for each profile card */
+.profile-container {
+  width: calc(33.33% - 20px); /* Set the width of each profile card with spacing */
+  flex: 1; /* Allow each profile card to take up an equal portion of the container */
 }
+
+.profile-details {
+  padding: 0.75rem;
+  color: #F2F2F3;
+  font-size: 18px;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.profile-interests {
+  color: rgba(242, 242, 243, 0.75);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profile-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; /* Add margin at the bottom */
+}
+
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.profile-initials {
+  position: relative;
+}
+
+
+
+.profile-card {
+  position: relative;
+  background: #202427;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.profile-progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #31344b;
+  border-radius: 20px; /* Add border-radius for curved corners */
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.profile-percent {
+  width: var(--progress-width); /* Use the CSS variable for width */
+  height: 100%;
+  background: linear-gradient(270deg, #FCFF60, transparent);
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #31344b;
+}
+
+
+
+
 
 /*=============== FOOTER ===============*/
 
